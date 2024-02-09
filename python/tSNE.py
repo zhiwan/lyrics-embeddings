@@ -1,7 +1,6 @@
 from sklearn.manifold import TSNE
 import numpy as np
 import json
-from openai import OpenAI
 import sys
 import os
 
@@ -34,7 +33,7 @@ def save_tsne_embeddings(original_data, tsne_embeddings, original_json_filepath)
 
     # Generate new filename with '_small' suffix before the file extension
     base, ext = os.path.splitext(original_json_filepath)
-    new_filename = f"{base}_small{ext}"
+    new_filename = f"{base}_tsne{ext}"
 
     # Save updated data to the new JSON file
     with open(new_filename, 'w', encoding='utf-8') as file:
