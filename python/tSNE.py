@@ -43,7 +43,15 @@ def main():
         sys.exit(1)
 
     filename = sys.argv[1]
-    json_filepath = f'genius_export/{filename}/{filename}_embeddings.json'
+    root = f'plot/{filename}/{filename}'
+    json_filepath = root + '_embeddings.json'
+
+    # Split the json_filepath into root and extension
+    # root = f'plot/{filename}/{filename}'
+
+    # Define filenames for 2D and 3D embeddings
+    json_filepath_2d = root + '_embeddings_2d.json'
+    json_filepath_3d = root + '_embeddings_3d.json'
 
     # Load original embeddings
     original_data, embeddings = load_embeddings(json_filepath)
@@ -51,12 +59,12 @@ def main():
     # Apply t-SNE with n_components=2
     tsne_embeddings_2d = apply_tsne(embeddings, n_components=2)
     # Save the t-SNE transformed embeddings for 2D
-    save_tsne_embeddings(original_data, tsne_embeddings_2d, json_filepath.replace('.json', '_2d.json'))
+    save_tsne_embeddings(original_data, tsne_embeddings_2d, json_filepath_2d)
     
     # Apply t-SNE with n_components=3
     tsne_embeddings_3d = apply_tsne(embeddings, n_components=3)
     # Save the t-SNE transformed embeddings for 3D
-    save_tsne_embeddings(original_data, tsne_embeddings_3d, json_filepath.replace('.json', '_3d.json'))
+    save_tsne_embeddings(original_data, tsne_embeddings_3d, json_filepath_3d)
 
 
 if __name__ == "__main__":

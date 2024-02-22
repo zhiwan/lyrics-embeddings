@@ -3,9 +3,6 @@ from openai import OpenAI
 import sys
 import os
 
-
-
-
 def check_filepath(json_filepath):
     # Check if the JSON file exists then loads
     if os.path.exists(json_filepath):
@@ -30,8 +27,8 @@ def add_embeddings_to_file(client, json_filepath, json_out_filepath):
     # Iterate over each entry in the JSON file
     for entry in data:
         # Retrieve the lyrics from the entry
-        lyrics = entry['lyrics']
-        # lyrics = entry['text']
+        # lyrics = entry['lyrics']
+        lyrics = entry['text']
 
         # Generate embeddings for the lyrics
         embeddings = get_embedding(client, lyrics, model='text-embedding-3-small')

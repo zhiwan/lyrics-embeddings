@@ -97,7 +97,7 @@ def fetch_lyrics(artist_name, song_number, api_timeout=20):
             song_info = {
                 "artist": most_popular_song.artist,
                 "song name": most_popular_song.title,
-                "lyrics": lyrics
+                "text": lyrics
             }
             song_info_list.append(song_info)
 
