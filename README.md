@@ -31,11 +31,11 @@
 * example: ```python3 embeddings.py 'The_Beatles'```
 * process: gets embeddings for the text field of each entry
 * input: json. the name is the artist is with the spaces ``` ``` replaced by ```_```. It will automatically look in the 'genius_export' folder
-* output: json file with embeddings_vector
+* output: json file with embeddings_vector. filename will have ```_embeddings``` added
 
 ## STEP 5 Combine data
 ### combine_data.py
-* example: ```python3 combine_data.py 'The_Beatles' 'Taylor_Swift'... as many as you want```
+* example: ```python3 combine_data.py 'The_Beatles' 'Taylor_Swift' 'The_Cure' ... as many as you want```
 * process: combines the json file embeddings into one json file. file is renamed with ```_vs_``` in between each artist data you inputted. it will place the new json file in a folder called 'plot'
 * input: json. the name is the artist is with the spaces ``` ``` replaced by ```_```. It will automatically look for the artists in the 'genius_export' folder
 * output: new combined json file of inputted artists
@@ -44,15 +44,15 @@
 ### tSNE.py
 * example: ```python3 tSNE.py 'The_Beatles_vs_Taylor_Swift'```
 * process: reduce dimensionality of embeddings using tSNE
-* input: json. file is renamed with ```_vs_``` in between each artist. It will automatically look in the 'plot' folder
-* output: new json with 2D + 3D dim reduction
+* input: json. file created from Step 5 with ```_vs_``` in between each artist. It will automatically look in the 'plot' folder and select the correct file
+* output: new json with 2D + 3D dim reduction. filename will have ```_2d``` and ```_3d``` added respectively
 
 ## STEP 7 Plot data
 ### plotly2d.py or plotly3d
 * plots in 2D + 3D with fields by using the 'tsne_embeddings' field
-* example to plot in 2D: ```plotly2d.py The_Beatles_vs_Taylor_Swift```
-* example to plot in 3D: ```plotly3d.py The_Beatles_vs_Taylor_Swift```
-* input: json. file is renamed with ```_vs_``` in between each artist. It will automatically look in the 'plot' folder
+* example to plot in 2D: ```plotly2d.py 'The_Beatles_vs_Taylor_Swift'```
+* example to plot in 3D: ```plotly3d.py 'The_Beatles_vs_Taylor_Swift'```
+* input: json. file is renamed with ```_vs_``` in between each artist. It will automatically look in the 'plot' folder and select the correct file based on whether it is 2d or 3d
 * output: 2d or 3d plot. an html file will be created and saved in the folder
 
 ## Helpful commands
