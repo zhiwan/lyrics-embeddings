@@ -1,6 +1,8 @@
 # Folder Directories #
 ############
 /old_code
+/old_plot
+/mp_env
 
 # Compiled source #
 ###################
