@@ -1,7 +1,7 @@
 ## STEP 1 Install the bot requirements
 * ```python3 -m venv mp_env && source mp_env/bin/activate```
 * for windows, instead of source, use ```mp_env\Scripts\activate```
-* pip install -r requirements.txt
+* ```pip install -r requirements.txt```
 
 ## STEP 2
 * add your api's from genius and openai to your environment configuration file
@@ -57,7 +57,8 @@
 * output: 2d or 3d plot. an html file will be created and saved in the folder
 
 ## Helpful commands
-* pip freeze > requirements.txt
+* ```pip freeze > requirements.txt```
+* This will export the environments installed dependencies
 
 # lyrics-embeddings
 pipeline for lyrics -> json -> embeddings -> tSNE -> visualization
