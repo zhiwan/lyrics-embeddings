@@ -1,5 +1,6 @@
 ## STEP 1 Install the bot requirements
-* python3 -m venv mp_env && source mp_env/bin/activate
+* ```python3 -m venv mp_env && source mp_env/bin/activate```
+* for windows, instead of source, use ```mp_env\Scripts\activate```
 * pip install -r requirements.txt
 
 ## STEP 2
